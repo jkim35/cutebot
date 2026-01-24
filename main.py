@@ -1,5 +1,11 @@
-def Turn(Degrees: number):
-    pass
+def Forward(num: number):
+    cuteBot.motors(51.6, 50)
+    basic.pause(55 * num)
+    cuteBot.stopcar()
+def TurnRight(Degrees: number):
+    cuteBot.motors(50, 0)
+    basic.pause(302 * (Degrees / 90))
+    cuteBot.stopcar()
 basic.show_leds("""
     . . . # .
     # . # . #
@@ -7,7 +13,7 @@ basic.show_leds("""
     # . # . #
     . # . . .
     """)
-cuteBot.motors(50, 49)
+Forward(25)
 
 def on_forever():
     cuteBot.color_light(cuteBot.RGBLights.ALL, 0xffffff)
